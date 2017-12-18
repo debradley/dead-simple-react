@@ -31,8 +31,17 @@ git push -u origin master
 
 # create styles.css
 
+git add index.html styles.css
+git commit -m "Initial commit"
+
 # complete README
+git add README.md
+git commit -m "First pass"
+
+git push
 ```
+
+To make the page available on github pages it was necessary to go into the repo settings on the github site and, in the GitHub Pages section, set source to master branch and save.
 
 ## Lessons Learned
 
@@ -64,10 +73,6 @@ Because script tags are loaded synchronously, DOM parsing and construction is bl
 
 `defer` ensures that the scripts load in the order they are declared and that they don't run until the page has finished loading. Because [`defer`](https://caniuse.com/#feat=script-defer) and [`async`](https://caniuse.com/#feat=script-async) have similar browser support, using `defer` is probably always the better choice.
 
-TODO: Is there any need to do anything more complicated than using `defer` if you don't need to support older browsers, as shown in Declaratively loading JavaScript?
-
-TODO: Does using webpack change the game?
-
 ### Loading CSS
 
 [Loading your CSS after your JavaScript may provide some performance gain (and won't hurt)](https://stackoverflow.com/a/9272730/5070828).
@@ -94,4 +99,10 @@ TODO: Better understand the differences and when link isn't the right choice.
 
 There's no need to include `meta http-equiv="X-UA-Compatible"` except possibly in the case where you're [optimizing for old versions of IE](https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do).
 
+## TODO
 
+Questions this spike raised that I haven't yet answered:
+
+* Can a git repo's settings be changed to allow GitHub Pages publishing from the command line using `hub` or something else?
+* Is there any need to do anything more complicated than using `defer` (as shown in [Declaratively loading JavaScript](https://www.fullstackreact.com/articles/Declaratively_loading_JS_libraries/index.html)?) if you don't need to support older browsers?
+* Does using webpack change the answer to the question above?
