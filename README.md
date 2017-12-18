@@ -1,5 +1,7 @@
 # Dead Simple React
 
+* [Project Page](https://debradley.github.io/react-dead-simple/)
+
 ## Overview
 
 This project is intended as a learning spike and has two primary purposes:
