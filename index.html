@@ -4,6 +4,7 @@
     <meta charset=utf-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dead Simple React</title>
+    <link rel="stylesheet" href="./styles.css">
     <script src=https://unpkg.com/react@16.2.0/umd/react.development.js defer></script>
     <script src=https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js defer></script>
     <script src=https://unpkg.com/babel-standalone@6.26.0/babel.js defer></script>
@@ -35,9 +36,12 @@
 
       ReactDOM.render(<Greeting />, document.getElementById("root"));
     </script>
-    <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div id=root>Loading...</div>
+    <div id=root>
+      <div class="greeting">
+        <div class="greeting__text">Loading...</div>
+      </div>
+    </body>
   </body>
 </html>
