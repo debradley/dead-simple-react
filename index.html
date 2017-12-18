@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dead Simple React</title>
+    <script src=https://unpkg.com/react@16.2.0/umd/react.development.js defer></script>
+    <script src=https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js defer></script>
+    <script src=https://unpkg.com/babel-standalone@6.26.0/babel.js defer></script>
+    <script type=text/babel>
+      class Greeting extends React.Component {
+        constructor(props) {
+          super(props);
+
+          this.state = { time: this.getTime() };
+        }
+
+        getTime() { return new Date().toLocaleTimeString(); }
+
+        componentDidMount() {
+          setInterval(() => {
+            this.setState({ time: this.getTime() })
+          }, 1000);
+        }
+
+        render() {
+          return (
+            <div className="greeting">
+              <div className="greeting__text">Hello, React</div>
+              <div className="greeting__time">{ this.state.time }</div>
+            </div>
+          );
+        };
+      };
+
+      ReactDOM.render(<Greeting />, document.getElementById("root"));
+    </script>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div id=root>Loading...</div>
+  </body>
+</html>
